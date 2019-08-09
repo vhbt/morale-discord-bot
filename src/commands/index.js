@@ -1,8 +1,8 @@
-const runPing = (msg) => {
+const runPing = msg => {
   msg.reply('pong');
 };
 
-const runInvite = async (msg) => {
+const runInvite = async msg => {
   const invite = await msg.channel.createInvite().catch(console.log);
   msg.reply(`${invite}`);
 };
@@ -24,7 +24,7 @@ export default function listenMessage(msg) {
   let found = false;
 
   if (content.startsWith(prefix) && content !== prefix) {
-    commands.forEach((command) => {
+    commands.forEach(command => {
       if (content.substring(prefix.length) === command.message) {
         found = true;
         return command.run(msg);

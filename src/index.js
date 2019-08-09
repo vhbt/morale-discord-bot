@@ -10,11 +10,11 @@ client.on('ready', () => {
     game: {
       name: 'Being awesome!',
     },
-  }),
+  });
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', (msg) => {
+client.on('message', msg => {
   listenMessage(msg, client);
 });
 
